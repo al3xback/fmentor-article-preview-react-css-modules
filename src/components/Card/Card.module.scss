@@ -1,9 +1,27 @@
 @use '../../assets/scss/abstracts/variables' as var;
 @use '../../assets/scss/abstracts/functions' as func;
 
-.card {
+.card,
+.card__image,
+.card__image-inner,
+.card__content,
+.card__author-img-box,
+.card__author-info,
+.card__share,
+.card__share-box,
+.card__share-action-buttons li {
 	display: flex;
 	flex-direction: column;
+}
+
+.card__author,
+.card__share-action,
+.card__share-action-buttons {
+	display: flex;
+	align-items: center;
+}
+
+.card {
 	width: 100%;
 	max-width: func.em(320, var.$font-size-primary);
 	background-color: var.$color-white;
@@ -13,28 +31,22 @@
 	box-shadow: 0 16px 30px rgba(0, 0, 0, 0.04);
 }
 
-.card-image,
-.card-content {
-	display: flex;
-	flex-direction: column;
-}
-
-.card-image {
+.card__image {
 	border-radius: 8px 8px 0 0;
 }
 
-.card-image * {
+.card__image * {
 	border-radius: inherit;
 }
 
-.card-image-inner {
+.card__image-inner {
 	position: relative;
 	height: 0;
 	padding-bottom: 62%;
 	background-color: var.$color-desaturated-dark-blue;
 }
 
-.card-image-inner img {
+.card__image-inner img {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -43,79 +55,65 @@
 	object-fit: cover;
 }
 
-.card-content {
+.card__content {
 	position: relative;
+	gap: func.em(15, 16);
 	padding: func.em(32, var.$font-size-primary)
 		func.em(32, var.$font-size-primary) func.em(20, var.$font-size-primary);
 }
 
-.card-title {
-	margin-bottom: func.em(15, 16);
+.card__desc {
+	margin-bottom: func.em(10, 13);
 }
 
-.card-desc {
-	margin-bottom: func.em(24, 13);
-}
-
-.card-author {
-	display: flex;
-	align-items: center;
+.card__author {
+	gap: func.em(15, var.$font-size-primary);
 	padding-right: func.em(45, var.$font-size-primary);
 }
 
-.card-author-img-box {
+.card__author-img-box {
 	flex: none;
-	margin-right: func.em(15, var.$font-size-primary);
 }
 
-.card-author-img {
+.card__author-img {
 	width: func.em(40, var.$font-size-primary);
 	height: auto;
 	border-radius: 50%;
 }
 
-.card-author-name {
+.card__author-name {
 	margin-bottom: func.em(1, 13);
 	font-size: func.em(13, var.$font-size-primary);
 }
 
-.card-author-post-date {
+.card__author-post-date {
 	color: var.$color-grayish-blue;
 }
 
-.card-share {
+.card__share {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	display: flex;
-	flex-direction: column;
 	width: 100%;
 }
 
-.card-share-checkbox {
+.card__share-checkbox {
 	position: absolute;
 	top: 0;
 	left: 0;
 	opacity: 0;
 }
 
-.card-share-box {
+.card__share-box {
 	position: relative;
-	display: flex;
-	justify-content: flex-end;
+	align-items: flex-end;
 	padding: func.em(24, var.$font-size-primary)
 		func.em(32, var.$font-size-primary);
 	background-color: transparent;
 	transition: all 0.24s;
 }
 
-.card-share-action,
-.card-share-action-buttons {
-	display: flex;
-	align-items: center;
-}
-
-.card-share-action {
+.card__share-action {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -127,13 +125,13 @@
 	visibility: hidden;
 }
 
-.card-share-action-txt {
+.card__share-action-txt {
 	text-transform: uppercase;
 	color: var.$color-grayish-blue;
 	letter-spacing: func.em(3, var.$font-size-primary);
 }
 
-.card-share-action-buttons {
+.card__share-action-buttons {
 	gap: func.em(15, var.$font-size-primary);
 }
 
@@ -142,15 +140,15 @@
 	z-index: 1;
 }
 
-.card-share-checkbox:checked + .card-share-box {
+.card__share-checkbox:checked + .card__share-box {
 	background-color: var.$color-dark-grayish-blue;
 }
 
-.card-share-checkbox:checked + .card-share-box .card-share-action {
+.card__share-checkbox:checked + .card__share-box .card__share-action {
 	visibility: visible;
 }
 
-.card-share-checkbox:checked + .card-share-box .btn--share-toggle {
+.card__share-checkbox:checked + .card__share-box .btn--share-toggle {
 	background-color: var.$color-desaturated-dark-blue;
 	border-color: var.$color-desaturated-dark-blue;
 	color: var.$color-white;
@@ -162,29 +160,29 @@
 		max-width: func.em(720, var.$font-size-primary);
 	}
 
-	.card-image {
+	.card__image {
 		flex-shrink: 0;
 		flex-basis: func.em(280, var.$font-size-primary);
 		max-width: func.em(280, var.$font-size-primary);
 		border-radius: 8px 0 0 8px;
 	}
 
-	.card-image-inner,
-	.card-image-inner img {
+	.card__image-inner,
+	.card__image-inner img {
 		position: static;
 	}
 
-	.card-image-inner {
+	.card__image-inner {
 		flex: auto;
 		height: auto;
 		padding-bottom: 0;
 	}
 
-	.card-title {
+	.card__title {
 		font-size: func.em(20, var.$font-size-primary);
 	}
 
-	.card-share-action {
+	.card__share-action {
 		top: auto;
 		left: auto;
 		bottom: func.em(80, var.$font-size-primary);
@@ -196,7 +194,7 @@
 		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
 	}
 
-	.card-share-action::before {
+	.card__share-action::before {
 		content: '';
 		position: absolute;
 		left: 50%;
@@ -207,7 +205,7 @@
 		transform: translateX(-50%) rotate(45deg);
 	}
 
-	.card-share-checkbox:checked + .card-share-box {
+	.card__share-checkbox:checked + .card__share-box {
 		background-color: transparent;
 	}
 }

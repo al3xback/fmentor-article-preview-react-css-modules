@@ -5,53 +5,56 @@ import styles from './Card.module.scss';
 const Card = () => {
 	return (
 		<article className={styles.card}>
-			<div className={styles['card-image']}>
-				<div className={styles['card-image-inner']}>
+			<div className={styles['card__image']}>
+				<div className={styles['card__image-inner']}>
 					<img width="280" height="278" src={drawersImage} alt="" />
 				</div>
 			</div>
-			<div className={styles['card-content']}>
-				<h2 className={styles['card-title']}>
+			<div className={styles['card__content']}>
+				<h2 className={styles['card__title']}>
 					Shift the overall look and feel by adding these wonderful
 					touches to furniture in your home
 				</h2>
-				<p className={styles['card-desc']}>
+				<p className={styles['card__desc']}>
 					Ever been in a room and felt like something was missing?
 					Perhaps it felt slightly bare and uninviting. I've got some
 					simple tips to help you make any room feel complete.
 				</p>
-				<div className={styles['card-author']}>
-					<div className={styles['card-author-img-box']}>
+				<div className={styles['card__author']}>
+					<div className={styles['card__author-img-box']}>
 						<img
-							className={styles['card-author-img']}
+							className={styles['card__author-img']}
 							width="40"
 							height="40"
 							src={avatarImage}
 							alt="Michelle Appleton"
 						/>
 					</div>
-					<div className={styles['card-author-info']}>
-						<h3 className={styles['card-author-name']}>
+					<div className={styles['card__author-info']}>
+						<h3 className={styles['card__author-name']}>
 							Michelle Appleton
 						</h3>
-						<p className={styles['card-author-post-date']}>
+						<p className={styles['card__author-post-date']}>
 							28 Jun 2020
 						</p>
 					</div>
 				</div>
-				<div className={styles['card-share']}>
+				<div className={styles['card__share']}>
 					<input
 						type="checkbox"
 						name="toggle"
 						id="share-toggle"
-						className={styles['card-share-checkbox']}
+						className={styles['card__share-checkbox']}
 					/>
-					<div className={styles['card-share-box']}>
-						<div className={styles['card-share-action']}>
-							<span className={styles['card-share-action-txt']}>
+					<div className={styles['card__share-box']}>
+						<div className={styles['card__share-action']}>
+							<span className={styles['card__share-action-txt']}>
 								Share
 							</span>
-							<ul className={styles['card-share-action-buttons']}>
+							<ul
+								className={
+									styles['card__share-action-buttons']
+								}>
 								<li>
 									<a href="#/" title="Share on facebook">
 										<i
