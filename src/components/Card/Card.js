@@ -7,7 +7,7 @@ const Card = () => {
 		<article className={styles.card}>
 			<div className={styles['card__image']}>
 				<div className={styles['card__image-inner']}>
-					<img width="280" height="278" src={drawersImage} alt="" />
+					<img width="280" height="278" src={drawersImage} alt="Drawers" />
 				</div>
 			</div>
 			<div className={styles['card__content']}>
