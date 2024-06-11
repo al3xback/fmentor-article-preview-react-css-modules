@@ -8,9 +8,9 @@ const Card = () => {
 			<div className={styles['card__image']}>
 				<div className={styles['card__image-inner']}>
 					<img
+						src={drawersImage}
 						width="280"
 						height="278"
-						src={drawersImage}
 						alt="Drawers"
 					/>
 				</div>
@@ -28,10 +28,10 @@ const Card = () => {
 				<div className={styles['card__author']}>
 					<div className={styles['card__author-img-box']}>
 						<img
+							src={avatarImage}
 							className={styles['card__author-img']}
 							width="40"
 							height="40"
-							src={avatarImage}
 							alt="Michelle Appleton"
 						/>
 					</div>
